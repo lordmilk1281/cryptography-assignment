@@ -1,9 +1,24 @@
+import HelperLayout from '@/components/layout/HelperLayout';
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Link from 'next/link';
+const navItems = [
+  {
+    name: "Credit Card Validation",
+    link: "/card-validation",
+  },
+  {
+    name: "Hamming Code",
+    link: "/hamming-code",
+  },
+  {
+    name: "Brute Force Password Cracking",
+    link: "/brute-force-password",
+  },
+  {
+    name: "Steganography",
+    link: "/steganography",
+  },
+];
 
 export default function Home() {
   return (
@@ -14,7 +29,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div></div>
+      <HelperLayout>
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 gap-4">
+            {navItems.map(item => (
+              <Link
+                href={item.link}
+                key={item.link}
+                  className="font-medium ring-1 ring-gray-100 rounded-lg px-10 py-5 text-center shadow-lg hover:shadow-neutral-100 transition-shadow"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </HelperLayout>
     </>
-  )
+  );
 }
