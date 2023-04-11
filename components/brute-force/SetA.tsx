@@ -51,7 +51,7 @@ const SetA = (props: Props) => {
         {file ? (
           <ImportedFile file={file} onDelete={() => setFile(null)} />
         ) : (
-          <UploadFile file={file} onInput={handleFile} />
+          <UploadFile onInput={handleFile} accept="" />
         )}
       </div>
       <ConfirmButton

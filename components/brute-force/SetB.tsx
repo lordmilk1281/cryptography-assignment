@@ -15,6 +15,7 @@ const SetB = (props: Props) => {
   const [showValidation, setShowValidation] = useState(false);
 
   const bruteForce = (dictionary: string[]) => {
+    console.log(dictionary);
     setFound(dictionary.includes(password));
     setLoading(false);
     setShowValidation(true);

@@ -3,10 +3,9 @@ import React, { DragEvent, useRef } from "react";
 type Props = {
   onInput: Function;
   accept?: string;
-  file: null | File;
 };
 
-const UploadFile = ({ onInput, file, accept = "" }: Props) => {
+const UploadFile = ({ onInput, accept = "" }: Props) => {
   const fileInputField = useRef<HTMLInputElement>(null);
 
   const dragOver = (event: DragEvent<HTMLDivElement>) => {
